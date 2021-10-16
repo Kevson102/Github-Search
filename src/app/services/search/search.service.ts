@@ -9,6 +9,8 @@ import { environment } from 'src/environments/environment';
 export class SearchService {
   private baseURL = environment.baseURL;
 
+  private apiKey = environment.githubToken;
+
   constructor(private httpClient:HttpClient) { }
 
   // getRepository(){
@@ -31,9 +33,10 @@ export class SearchService {
   //  }
 
   getRepositories(username:string){
-    return this.httpClient.get<any[]>(`${this.baseURL}users/${username}/repos`,{
+    return this.httpClient.get<any[]>(`${this.baseURL}users/${username}?access_token= + ${this.apiKey}`,{
     }).toPromise()
   }
+  
   
 }
 
