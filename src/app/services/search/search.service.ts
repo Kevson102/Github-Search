@@ -20,15 +20,20 @@ export class SearchService {
   //     description:string;
   //   }
 
-  getRepositories(username:string): Observable<any[]> {
-    // let param = new HttpParams();
-    // param = param.append('username', 'SamTomashi');
-    return this.httpClient.get<any[]>(`${this.baseURL}users/${username}/repos`, {
-      // params: param,
-      // // headers : this.headers,
-      // withCredentials: true
-    });
-   }
+  // getRepositories(username:string): Observable<any[]> {
+  //   // let param = new HttpParams();
+  //   // param = param.append('username', 'SamTomashi');
+  //   return this.httpClient.get<any[]>(`${this.baseURL}users/${username}/repos`, {
+  //     // params: param,
+  //     // // headers : this.headers,
+  //     // withCredentials: true
+  //   });
+  //  }
+
+  getRepositories(username:string){
+    return this.httpClient.get<any[]>(`${this.baseURL}users/${username}/repos`,{
+    }).toPromise()
+  }
   
 }
 
