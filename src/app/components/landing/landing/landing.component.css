@@ -2,7 +2,7 @@
   font-family: 'Rancho', cursive;
 } */
 img{
-  max-width: 300px;
+  max-width: 250px;
 }
 .column1{
   font-family: Ruluko;
@@ -12,8 +12,9 @@ img{
 .description{
   border: 1px;
   max-width: 600px;
-  position: relative;
-  top: 150px;
+  margin-top: 100px;
+  /* position: relative;
+  top: 150px; */
 }
 .description>h3{
   font-weight: bolder;
