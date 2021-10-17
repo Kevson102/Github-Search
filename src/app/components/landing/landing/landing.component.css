@@ -10,15 +10,26 @@ img{
   font-family: 'Rancho', cursive;
 }
 .description{
-  border: 1px solid black;
+  border: 1px;
   max-width: 600px;
   position: relative;
   top: 150px;
+}
+.description>h3{
+  font-weight: bolder;
 }
 .repositories{
   margin: 10px;
 }
 ul{
   list-style: none;
+  color: #8DFC00;
+}
+.notice{
+  border-radius: 110px;
+  background-color: #839CF3;
+}
+.notice>p{
+  margin: 0;
   color: #8DFC00;
 }
