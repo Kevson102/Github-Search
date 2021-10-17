@@ -4,7 +4,7 @@
       <img src="../../../../assets/images/profile.png" alt="Profile picture">
       <h3>GitHub Username: <span><strong>Kevson102</strong></span></h3>
       <div *ngFor = 'let user of users'>
-        <p><small>Published: {{user.date | datecounter}} ago</small></p>
+        <p><small appHighlight>Published: {{user.date | datecounter}} ago</small></p>
       </div>
       <h4>My Repositories:</h4>
       <ul class="navigation">
