@@ -10,7 +10,6 @@ import { FormControl, FormGroup } from '@angular/forms';
 })
 export class AppComponent implements OnInit, OnDestroy {
   title = 'GithubSearch';
-  // username: string = 'Kevson102';
   repositories: any[] = [];
   subscription = new Subscription();
 
@@ -29,12 +28,7 @@ export class AppComponent implements OnInit, OnDestroy {
   }
 
   async getRepositories(){
-    // this.subscription.add(
-    //   this.searchSerivce.getRepositories(this.username).subscribe((repos)=>{
-    //     // console.log(response)
-    //     this.repositories = repos;
-    //   })
-    // )
+
 
     try{
       const repositories = await this.searchSerivce.getRepositories(this.githubSearchForm.getRawValue().githubUserName);
@@ -42,6 +36,5 @@ export class AppComponent implements OnInit, OnDestroy {
     }catch(error){
       console.log(error)
     }
-    // console.log(this.githubSearchForm.getRawValue())
   }
 }
