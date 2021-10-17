@@ -6,7 +6,10 @@
 * This is a Web application were users can simply enter and submit a github username and see all public repositories associated to that username.
 
 ## Application Page Design.
+### The Landing Page
 <img src="src/assets/images/Page1Design.png" raw = true alt = "Website design">
+
+### The Search page
 <img src="src/assets/images/page2Design.png" raw = true alt = "Website design">
 
 
