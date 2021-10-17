@@ -1,0 +1,7 @@
+nav{
+  background-color: #839CF3;
+}
+.navbuttons{
+  display: flex;
+  justify-content: space-evenly;
+}

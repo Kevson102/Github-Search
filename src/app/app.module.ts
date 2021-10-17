@@ -9,13 +9,15 @@ import { AppComponent } from './app.component';
 import { LandingComponent } from './components/landing/landing/landing.component';
 import { CentralComponent } from './central/central.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LandingComponent,
     CentralComponent,
-    NavbarComponent
+    NavbarComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
