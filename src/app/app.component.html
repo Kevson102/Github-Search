@@ -1,21 +1,5 @@
-<div class="container">
-  <div class="text-center">
-    <h2>Search Repository by GithHub Username</h2>
-    <form action="" [formGroup]="githubSearchForm" (submit) = "getRepositories()">
-      <div class="center">
-        <input class="form-control" type="text" formControlName="githubUserName" id="Githubusername" style="max-width: 350px;" placeholder="Enter GitHub User Name">
-      </div>
-      <button class="btn btn-primary submit" type="submit"> Submit</button>
-    </form>
-    <h3>Search Results</h3>
-    <div *ngFor = "let repository of repositories">
-      <h5>Github Username: <em><strong> {{repository.login}} </strong></em></h5>
-      <h5>Repositories</h5>
-      <p> {{repository.name}} </p>
-    </div>
-  </div>
-</div>
-
+<app-landing></app-landing>
+<app-central></app-central>
 
 
 <!-- <ul *ngFor = "let repository of repositories">

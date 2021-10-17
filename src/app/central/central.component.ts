@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
+import { Subscription } from 'rxjs';
+import { SearchService } from '../services/search/search.service';
+
 
 @Component({
   selector: 'app-central',
@@ -7,9 +11,37 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CentralComponent implements OnInit {
 
-  constructor() { }
+  title = 'GithubSearch';
+  repositories: any[] = [];
+  subscription = new Subscription();
 
-  ngOnInit(): void {
+  githubSearchForm = new FormGroup({
+    githubUserName: new FormControl("")
+  })
+  
+  constructor(private searchSerivce: SearchService){
+
   }
+  ngOnDestroy(): void {
+    this.subscription.unsubscribe();
+    }
+  ngOnInit(): void { 
+    this.getRepositories();
+  }
+
+  async getRepositories(){
+
+
+    try{
+      const repositories = await this.searchSerivce.getRepositories(this.githubSearchForm.getRawValue().githubUserName);
+      this.repositories = repositories;
+    }catch(error){
+      console.log(error)
+    }
+  }
+  // constructor() { }
+
+  // ngOnInit(): void {
+  // }
 
 }
