@@ -16,8 +16,6 @@ export class SearchService {
   }
 
   getRepositories(username:string){
-    // return this.http.get('https://api.github.com/users/' + name + '?client_id=03dd913322b3db7d987&client_secret=020c0b3665296b33d758edeeced30473ef44f7da')
-
     return this.httpClient.get<any[]>(`${this.baseURL}/users/${username}/repos`,{
     }).toPromise()
   }
