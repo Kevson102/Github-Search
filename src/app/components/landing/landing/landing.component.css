@@ -1,0 +1,17 @@
+*{
+  font-family: 'Rancho', cursive;
+}
+img{
+  max-width: 300px;
+}
+.column1{
+  font-family: Ruluko;
+  background-color: #839CF3;
+  font-family: 'Rancho', cursive;
+}
+.description{
+  border: 1px solid black;
+  max-width: 600px;
+  position: relative;
+  top: 150px;
+}
