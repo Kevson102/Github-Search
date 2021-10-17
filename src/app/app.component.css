@@ -1,0 +1,9 @@
+.center{
+  display: grid;
+  place-items: center;
+}
+.submit{
+  border-radius: 110px;
+  background-color: #839CF3;
+  margin-top: 20px;
+}
