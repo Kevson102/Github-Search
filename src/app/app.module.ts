@@ -11,6 +11,7 @@ import { CentralComponent } from './central/central.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { DatecounterPipe } from './pipes/datecounter.pipe';
+import { HighlightDirective } from './highlight.directive';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { DatecounterPipe } from './pipes/datecounter.pipe';
     CentralComponent,
     NavbarComponent,
     NotFoundComponent,
-    DatecounterPipe
+    DatecounterPipe,
+    HighlightDirective
   ],
   imports: [
     BrowserModule,
