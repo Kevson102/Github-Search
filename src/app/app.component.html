@@ -1,3 +1,8 @@
+<form action="" [formGroup]="githubSearchForm" (submit) = "getRepositories()">
+  <input class="form-control" type="text" formControlName="githubUserName" id="Githubusername">
+  <button type="submit"> Submit</button>
+</form>
+
 <ul *ngFor = "let repository of repositories">
   <li> {{repository.name}} - {{repository.description}} </li>
 </ul>

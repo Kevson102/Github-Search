@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpHeaders} from '@angular/common/http';
+import { HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
@@ -8,46 +8,15 @@ import { environment } from 'src/environments/environment';
 })
 export class SearchService {
   private baseURL = environment.baseURL;
-
   private apiKey = environment.githubToken;
+  private headers = new HttpHeaders();
 
-  constructor(private httpClient:HttpClient) { }
-
-  // getRepository(){
-    
-  // }
-  // repositoryRequest(){
-  //   interface ApiResponse{
-  //     name:string;
-  //     description:string;
-  //   }
-
-  // getRepositories(username:string): Observable<any[]> {
-  //   // let param = new HttpParams();
-  //   // param = param.append('username', 'SamTomashi');
-  //   return this.httpClient.get<any[]>(`${this.baseURL}users/${username}/repos`, {
-  //     // params: param,
-  //     // // headers : this.headers,
-  //     // withCredentials: true
-  //   });
-  //  }
+  constructor(private httpClient:HttpClient) { 
+    this.headers = this.headers.set('Content-Type', 'application/json; charset=utf-8').set('Accept', 'application/json').set('Authorization', `Bearer ${this.apiKey}`)
+  }
 
   getRepositories(username:string){
-    return this.httpClient.get<any[]>(`${this.baseURL}users/${username}?access_token= + ${this.apiKey}`,{
+    return this.httpClient.get<any[]>(`${this.baseURL}/users/${username}/repos`,{
     }).toPromise()
   }
-  
-  
 }
-
-
-
-// getUsers(): Observable<GithubApi[]> {
-//   let param = new HttpParams();
-//   param = param.append('username', 'SamTomashi');
-//   return this.httpClient.get<GithubApi[]>(`https://api.github.io/users`, {
-//     params: param,
-//     // headers : this.headers,
-//     withCredentials: true
-//   });
-//  }

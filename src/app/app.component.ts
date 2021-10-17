@@ -1,6 +1,7 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { SearchService } from './services/search/search.service';
 import { Subscription } from 'rxjs';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -9,9 +10,13 @@ import { Subscription } from 'rxjs';
 })
 export class AppComponent implements OnInit, OnDestroy {
   title = 'GithubSearch';
-  username: string = 'Kevson102';
+  // username: string = 'Kevson102';
   repositories: any[] = [];
   subscription = new Subscription();
+
+  githubSearchForm = new FormGroup({
+    githubUserName: new FormControl("")
+  })
   
   constructor(private searchSerivce: SearchService){
 
@@ -23,7 +28,7 @@ export class AppComponent implements OnInit, OnDestroy {
     this.getRepositories();
   }
 
-  getRepositories(){
+  async getRepositories(){
     // this.subscription.add(
     //   this.searchSerivce.getRepositories(this.username).subscribe((repos)=>{
     //     // console.log(response)
@@ -31,9 +36,12 @@ export class AppComponent implements OnInit, OnDestroy {
     //   })
     // )
 
-    this.searchSerivce.getRepositories(this.username).then((response)=>{
-      console.log(response)
-      this.repositories = response;
-    })
+    try{
+      const repositories = await this.searchSerivce.getRepositories(this.githubSearchForm.getRawValue().githubUserName);
+      this.repositories = repositories;
+    }catch(error){
+      console.log(error)
+    }
+    // console.log(this.githubSearchForm.getRawValue())
   }
 }
