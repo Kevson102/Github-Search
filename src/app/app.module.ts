@@ -10,6 +10,7 @@ import { LandingComponent } from './components/landing/landing/landing.component
 import { CentralComponent } from './central/central.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { DatecounterPipe } from './pipes/datecounter.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     LandingComponent,
     CentralComponent,
     NavbarComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    DatecounterPipe
   ],
   imports: [
     BrowserModule,

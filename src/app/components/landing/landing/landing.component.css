@@ -18,3 +18,7 @@ img{
 .repositories{
   margin: 10px;
 }
+ul{
+  list-style: none;
+  color: #8DFC00;
+}
