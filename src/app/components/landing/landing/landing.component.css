@@ -1,6 +1,6 @@
-*{
+/* *{
   font-family: 'Rancho', cursive;
-}
+} */
 img{
   max-width: 300px;
 }
@@ -24,6 +24,8 @@ img{
 ul{
   list-style: none;
   color: #8DFC00;
+  font-size: 25px;
+  margin: 0%;
 }
 .notice{
   border-radius: 110px;
@@ -32,4 +34,7 @@ ul{
 .notice>p{
   margin: 0;
   color: #8DFC00;
+}
+p{
+  font-size: 20px;
 }
